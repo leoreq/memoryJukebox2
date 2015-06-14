@@ -1,0 +1,306 @@
+
+
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #66000D;
+  /*font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
+  */
+  font-size:1.5em;
+}
+
+#principal {
+  background-color: #fff;
+}
+
+.tst {
+  width:80%;
+}
+.response {
+  margin-top:1em;
+  font-size:1.5em;
+}
+/* OLD CODE
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #66000D;
+}
+
+body {
+  position: absolute;
+  width: 90%;
+  min-height: 110%;
+  margin: 1em 3em;
+  padding-top: 2em;
+  background-color: #fff;
+  font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
+  text-align: center;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  z-index:1000;
+}
+
+/*Start adding the game instruction styles
+.blackOut {
+  position: absolute;
+  background-color: black;
+  opacity: 0.9;
+  text-align: center; 
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+#MJinstructions {
+  font-family:  'Shadows Into Light','Open Sans Condensed', sans-serif;
+  margin-top: -2em;
+  width: 100%;
+  height: 100%;
+  z-index:1000;
+  display:none;
+  color:white;
+}
+.explanation {
+  margin: 1em auto;
+}
+
+#MJinstructions>ul {
+  margin: 9em 2em;
+  text-align: left;
+  line-height: 1.7em;
+  font-size: 3em;
+}
+
+#difficulties {
+  margin: 0 0 0 1em;
+}
+
+strong {
+  font-size:1.1em;
+  font-weight:900;
+}
+
+/*this will contain styles for header section
+#mjTitle {
+  background-image: url('../images/memoryJukebox.png');
+  height: 10em;
+  background-repeat: no-repeat;
+  background-size:contain;
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  z-index:1010;
+  position: relative;
+}
+
+.mjButtons {
+  height:2em;
+}
+.bigbutton {
+  margin-top: 1.25rem;
+  background-color: #A60015;
+  width: 70%;
+  color: white;
+  text-align: center;
+  border-radius: 0.5em;
+  text-shadow: 0px 0px 7px #EAE217;
+  border: 4px solid #66000D;
+  padding: 1em 1.5em;
+  font-size: 2rem;
+  line-height: 1.33;
+}
+
+#instructionsbutton {
+  z-index:1001;
+  position: relative;
+  width: 20%;
+}
+#playbutton{
+  z-index:900;
+  position: relative;
+  width: 50%;
+}
+#diffbutton {
+  width: 20%;
+}
+#replaybutton{
+  width: 50;
+  display:none;
+}
+/*This will contain styles for Display Section
+#messageBox ,#messageBox2{
+  font-size: 3em;
+  font-family:  'Shadows Into Light','Open Sans Condensed', sans-serif;
+  margin:2em;
+  line-height: 1.3em;
+}
+#recordPlayer {
+  background-image: url('../images/player.JPG');
+  height: 31em;
+  background-repeat: no-repeat;
+  background-size:contain;
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+/*This will contain the stryles for the Choices Section
+
+.choicesSection {
+  height:100%;
+  display:none;
+}
+.subTitle{
+  font-size: 2em;
+  font-family:  'Shadows Into Light','Open Sans Condensed', sans-serif;
+  margin: 1em;
+  line-height: 1.3em;
+  text-align: left;
+  color: #A60015;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/*This will contain the stryles for the Collection Section
+.collectionSection ,.prizeSection {
+  height:100%;
+  display:none;
+}
+.prizeSection {
+  margin-top: -2em;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: #fff;
+  z-index:1005;
+}
+#messageBox2{
+  margin-top:8em;
+}
+
+#prizeMessage {
+  margin-top:1em;
+}
+
+#bandPic {
+  background-image: url('../images/player.JPG');
+  height: 31em;
+  background-repeat: no-repeat;
+  background-size:contain;
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+#recordHolder, #prizeHolder{
+  max-width: 41em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recordPrize {
+  background-image: url('../images/record.JPG');
+  float:left;
+  height: 22em;
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 34%;
+  margin: 1em 2em;
+}
+
+.prizeContainer {
+  float:right;
+  height: 22em;
+  width: 46%;
+  margin: 1em 2em;
+}
+.detailPrize{
+  font-size: 3em;
+  font-family:   'Shadows Into Light','Open Sans Condensed', sans-serif;
+
+  line-height: 1.3em;
+  text-align: left;
+  color: #A60015;
+}
+
+#nextButton {
+  margin-top:-1.5em;
+}
+/* old code for help
+
+.main {
+  background-color: white;
+  margin-top: 110px;
+  padding-left: 100px;
+  min-width: 1200px;
+  height: 500px;
+}
+
+
+
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing,.ryu-cool {
+  background-repeat: no-repeat;
+}
+
+.ryu-cool,.ryu-ready, .ryu-throwing {
+  display: none;
+} 
+
+.ryu-ready {
+  background-image: url('../images/ryu-ready-position.gif');
+}
+
+
+.hadouken {
+  background-image: url('../images/hadouken.gif');
+  width: 156px; 
+  height: 90px;
+  display: none;
+  /*
+  float: left;
+  margin-top: 169px;
+margin-left: -127px;* /
+ position: relative;
+  top: 169px;
+  left: -127px;
+  float: left;
+  z-index: 10;
+}
+
+.sf-logo {
+  background-image: url('../images/sf-logo.png');
+width:487px;
+height:310px;
+margin-top:95px;
+display: none;
+}
+
+.instructions {
+	width:100%;
+	height:100%;
+	background-color:white;
+	display:none;
+}
+
+.instruction {
+
+width: 50%;
+font-size: xx-large;
+text-align: center;
+
+}
+
+*/

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MemoryJukebox</title>
+	<!-- Google Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<!-- BS Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- BS Optional theme -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<!-- BS Latest compiled and minified JavaScript -->
+	<!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script-->
+	<!-- Own Files & Jquery -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+
+	<div class="container col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 img-rounded" id="principal">
+		<div class="row">
+			<div class="col-xs-12">
+				<img src="./images/memoryJukebox.png" alt="..." class="img-responsive">
+			</div>
+		</div>
+
+		<!--div class="row">
+			<div class="col-xs-4">
+				<button type="button" class="btn col-xs-12 btn-lg btn-danger">?</button>
+			</div>
+			<div class="col-xs-4">
+				<button type="button" class="btn col-xs-12 btn btn-lg btn-danger">PLAY</button>
+			</div>
+			<div class="col-xs-4">
+				<button type="button" class="btn btn col-xs-12 btn-lg btn-danger">DIFF</button>
+			</div>
+		</div-->
+		
+		<div class="container col-xs-12">
+			<div class="row">
+				<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">?</a>
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">PLAY</a>
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">DIFF</a>
+	    		</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				  
+			</div>
+		</div>
+
+		<form class="musicStyleForm" role="form">
+		  <div class="form-group">
+		    <label for="styleEnter">Music Style Select</label>
+		    <input type="text" class="form-control" id="styleEnter" placeholder="Enter your music style of domain ... ">
+		  </div>
+		  <button type="submit" class="btn btn-default center-block">Submit</button>
+		</form>
+		<div class="templates hidden">	
+			<div class="ajaxResponse">
+				<div class="row">
+					<div class="col-xs-6 text-center">
+						<dl class="dl-horizontal response">
+				  			<dt>Artist</dt>
+				  			<dd class="respArtist">????</dd>
+				  			<dt>song</dt>
+				  			<dd class="respSong">????</dd>
+						</dl>
+					</div>
+					<div class="col-xs-6 text-center">
+						<img class="respImg img-rounded tst" src="./images/record.JPG" alt="band pic">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<section class="results">
+			
+		</section>
+
+		<section class="search-results">
+			
+		</section>
+		<!--has to hold alternatives for selection-->
+		<!--section class="choicesSection">
+			
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="subTitle "><strong>Choose</strong> the song you think is playing</h1>
+					</div>
+				</div>
+
+				<div class="btn-group-vertical col-xs-offset-2 col-xs-8" role="group" aria-label="Justified button group">
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 1</a>
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 2</a>
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 3</a>
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 4</a>
+	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 5</a>
+	    		</div>
+			
+		</section-->
+
+		<!--displays the prize-->
+
+
+	</div>
+
+
+
+</body>
+</html>
