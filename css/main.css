@@ -6,7 +6,7 @@ html {
   background-color: #66000D;
   /*font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
   */
-  font-size:1.5em;
+  /*font-size:1.5em;*/
 }
 
 #principal {
@@ -18,7 +18,7 @@ html {
 }
 .response {
   margin-top:1em;
-  font-size:1.5em;
+  /*font-size:1.5em;*/
 }
 /* OLD CODE
 html {

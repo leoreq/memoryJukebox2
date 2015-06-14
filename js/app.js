@@ -9,7 +9,7 @@ $(document).ready( function() {
 		var tags = "genre:"+$(this).find("input[id='styleEnter']").val();
 		console.log(tags);
 		getUnanswered(tags);
-		
+		songPlayer("#audioTest");
 	
 	});
 });
@@ -33,8 +33,15 @@ var showQuestion = function(question) {
 
 	// Set the album Info
 	var imgElem = result.find('.respImg');
-	console.log(question.album.images[2].url);
-	imgElem.attr("src",question.album.images[2].url);
+	console.log(question.album.images[0].url);
+	imgElem.attr("src",question.album.images[0].url);
+
+	//set the audio player
+	console.log(question.preview_url);
+	result.append('<audio id="audioTest" controls preload="auto" autobuffer autoplay src="' + question.preview_url + '"></audio>');		
+	musicTag="#audioTest";
+    console.log(musicTag);
+    
 
 	return result;
 };
@@ -62,7 +69,7 @@ var getUnanswered = function(tags) {
 	var request = {q: tags,
 								type: 'track',
 								year: '1998-2000',
-								limit: '5',
+								limit: '1',
 								market:'BO'};
 	
 	var result = $.ajax({
@@ -90,7 +97,12 @@ var getUnanswered = function(tags) {
 	});
 };
 
-
+function songPlayer (tag) {
+	console.log(tag+" was played");
+	$(tag).volume = 0.5;
+	$(tag).triggger('play');
+	$(tag).play();
+}
 
 
 
