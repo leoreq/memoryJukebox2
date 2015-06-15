@@ -42,8 +42,23 @@ var showQuestion = function(question) {
 	musicTag="#audioTest";
     console.log(musicTag);
     
-
 	return result;
+};
+
+var artistObj = function(question) {
+	
+	// Built a object (dictionary per artist
+	var mySongHits=new Object();
+	mySongHits.song=question.name;
+	mySongHits.artist=question.artists[0].name;
+	mySongHits.albumImg=question.album.images[1].url;
+	mySongHits.preview=question.preview_url;
+	mySongHits.popularity=question.popularity;
+	console.log(mySongHits);
+
+	//Update the artist dictionary 
+	songList.push(mySongHits);
+	
 };
 
 
@@ -69,7 +84,7 @@ var getUnanswered = function(tags) {
 	var request = {q: tags,
 								type: 'track',
 								year: '1998-2000',
-								limit: '1',
+								limit: '5',
 								market:'BO'};
 	
 	var result = $.ajax({
@@ -86,10 +101,13 @@ var getUnanswered = function(tags) {
 		*/
 		console.log(result);
 		$.each(result.tracks.items, function(i, item) {
-			var question = showQuestion(item);
+			//var question = showQuestion(item);
 			//console.log(item);
-			$('.results').append(question);
+			//$('.results').append(question);
+			artistObj(item);
 		});
+		console.log("the object list is :");
+		console.log(songList);
 	})
 	.fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
@@ -104,7 +122,7 @@ function songPlayer (tag) {
 	$(tag).play();
 }
 
-
+var songList=[];
 
 
 
