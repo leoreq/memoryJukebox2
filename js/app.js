@@ -84,7 +84,7 @@ var getUnanswered = function(tags) {
 	var request = {q: tags,
 								type: 'track',
 								year: '1998-2000',
-								limit: '5',
+								limit: '50',
 								market:'BO'};
 	
 	var result = $.ajax({
@@ -100,6 +100,7 @@ var getUnanswered = function(tags) {
 		$('.search-results').html(searchResults);
 		*/
 		console.log(result);
+		songList=[];
 		$.each(result.tracks.items, function(i, item) {
 			//var question = showQuestion(item);
 			//console.log(item);
