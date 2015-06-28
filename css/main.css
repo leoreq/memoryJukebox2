@@ -4,14 +4,54 @@ html {
   width: 100%;
   height: 100%;
   background-color: #66000D;
-  /*font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
-  */
-  /*font-size:1.5em;*/
+  font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
+}
+
+body{
+  line-height: 3em;
 }
 
 #principal {
   background-color: #fff;
+  padding-bottom:5em;
 }
+
+/*Start adding the game instruction styles*/
+.blackOut {
+  position: absolute;
+  background-color: black;
+  opacity: 0.9;
+}
+
+#MJinstructions {
+  margin-left: -15px;
+  width: 100%;
+  height: 100%;
+  z-index:1000;
+  display:none;
+  color:white;
+}
+
+#instructionsList {
+margin-top:13em;
+}
+
+/*Need to make sure this elements stand out when instructions are displayed*/
+.titleSection {
+  z-index:1010;
+  position: relative;
+}
+ #instructionsbutton {
+    z-index:1090;
+  position: relative;
+}
+/*Mode selection section*/
+.styleSelectSection {
+  display:none;
+  background-image: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+
+}
+/*Things used to format response, currently just for testign purposes*/
 
 .tst {
   width:80%;
@@ -20,6 +60,7 @@ html {
   margin-top:1em;
   /*font-size:1.5em;*/
 }
+
 /* OLD CODE
 html {
   width: 100%;

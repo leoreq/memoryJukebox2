@@ -1,5 +1,15 @@
 $(document).ready( function() {
 	console.log("ready to go");
+	//Instructions Listener
+	$('#instructionsbutton')
+		.click(function(){
+	    	$("#MJinstructions").toggle();})
+
+	// MODE Listener
+	$('#modeButton')
+		.click(function(){
+    		$(".styleSelectSection").toggle();})
+	
 	$('.musicStyleForm').submit( function(event){
 		event.preventDefault();
 		// zero out results if previous search has run

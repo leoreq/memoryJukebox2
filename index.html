@@ -20,67 +20,98 @@
 	<script src="js/app.js"></script>
 </head>
 <body>
-
+	<!--This contains the single container that holds all info within teh app-->
 	<div class="container col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 img-rounded" id="principal">
-		<div class="row">
-			<div class="col-xs-12">
-				<img src="./images/memoryJukebox.png" alt="..." class="img-responsive">
-			</div>
+		<!--has the black screen with information on how to play-->
+		<section class="instructionSection ">
+			<div class="blackOut col-xs-12 img-rounded" id="MJinstructions">
+	  		<div class="row">
+	  			<ul class="col-xs-offset-1 col-xs-10" id="instructionsList">
+	  			<li><p><strong>[1]</strong> SELECT MUSIC TYPE DIFICULTY (DIFF):</p>
+		  			<ul id="difficulties">
+		  				<li><p> ROCK is selected by Default</p></li>
+		  				<li><p> Submit a different style if you want.</p></li>
+		  			</ul>
+	  				
+	  			</li>
+	  			<li><p><strong>[2]</strong> PLAY: Press PLAY to start the game</p></li>
+	  			<li><p><strong>[3]</strong> LISTEN: A record will play for 15 seconds</p></li>
+	  			<li><p><strong>[4]</strong> GUESS: Select the ARTIST/SONG combination you think is playing.</p></li>
+	  			<!--li><h1 class="explanation"> If correct you will be rewarded a disc for your collection !!! </h1></li-->
+	  		</ul>
+	  		</div>
+	  		
 		</div>
-
-		<!--div class="row">
-			<div class="col-xs-4">
-				<button type="button" class="btn col-xs-12 btn-lg btn-danger">?</button>
-			</div>
-			<div class="col-xs-4">
-				<button type="button" class="btn col-xs-12 btn btn-lg btn-danger">PLAY</button>
-			</div>
-			<div class="col-xs-4">
-				<button type="button" class="btn btn col-xs-12 btn-lg btn-danger">DIFF</button>
-			</div>
-		</div-->
+		</section>
 		
-		<div class="container col-xs-12">
+
+
+		<!--This contains a responsive image that holds the app name-->
+		<section class="titleSection">
 			<div class="row">
-				<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">?</a>
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">PLAY</a>
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">DIFF</a>
-	    		</div>
+				<div class="col-xs-12">
+					<img src="./images/memoryJukebox.png" alt="..." class="img-responsive">
+				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="row">
-			<div class="col-xs-12">
-				  
-			</div>
-		</div>
-
-		<form class="musicStyleForm" role="form">
-		  <div class="form-group">
-		    <label for="styleEnter">Music Style Select</label>
-		    <input type="text" class="form-control" id="styleEnter" placeholder="Enter your music style of domain ... ">
-		  </div>
-		  <button type="submit" class="btn btn-default center-block">Submit</button>
-		</form>
-		<div class="templates hidden">	
-			<div class="ajaxResponse">
+		<!--This will hold the main buttons for the app-->
+		<section class="buttonSection">
+			<div class="container col-xs-12">
 				<div class="row">
-					<div class="col-xs-6 text-center">
-						<dl class="dl-horizontal response">
-				  			<dt>Artist</dt>
-				  			<dd class="respArtist">????</dd>
-				  			<dt>song</dt>
-				  			<dd class="respSong">????</dd>
-						</dl>
-					</div>
-					<div class="col-xs-6 text-center">
-						<img class="respImg img-circle tst" src="./images/record.JPG" alt="band pic">
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+		      			<a href="#" class="btn btn-lg btn-danger" role="button" id="instructionsbutton">?</a>
+		      			<a href="#" class="btn btn-lg btn-danger" role="button">PLAY</a>
+		      			<a href="#" class="btn btn-lg btn-danger" role="button" id="modeButton">MODE</a>
+		    		</div>
+				</div>
+			</div>
+		</section>
+
+		<!--Will let user change the default music style-->
+		<section class="styleSelectSection">
+			<form class="musicStyleForm col-xs-offset-8 col-xs-4 bg-danger img-rounded" role="form">
+			  <div class="form-group text-center">
+			    <label for="styleEnter">Music Style Select</label>
+			    <input type="text" class="form-control" id="styleEnter" placeholder="Enter your music style of domain ... " value="rock">
+			  </div>
+			  <button type="submit" class="btn btn-default center-block">Submit</button>
+			</form>
+		</section>
+		<!--has to hold message counter and Record Player-->
+		<section class="displaySection">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h1 id="messageBox">Test your memory and 90's MUSICHOODNESSNESS!!!!!</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 text-center">
+					<img src="./images/player.jpg" alt="..." class="img-responsive">	
+				</div>
+			</div>
+		
+	</section>
+		<!--has to hold all the templates that will be used in the code-->
+		<section class="templatesSection">
+			<div class="templates hidden">	
+				<div class="ajaxResponse">
+					<div class="row">
+						<div class="col-xs-6 text-center">
+							<dl class="dl-horizontal response">
+					  			<dt>Artist</dt>
+					  			<dd class="respArtist">????</dd>
+					  			<dt>song</dt>
+					  			<dd class="respSong">????</dd>
+							</dl>
+						</div>
+						<div class="col-xs-6 text-center">
+							<img class="respImg img-circle tst" src="./images/record.JPG" alt="band pic">
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		</section>
 		
 		<section class="results">
 			
