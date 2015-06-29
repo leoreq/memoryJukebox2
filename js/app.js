@@ -129,7 +129,7 @@ var createGame=function() {
 var displayGame=function(gameNumber) {
 	$("#optionsSection").find('.row').remove();
 	selectedSongNumber=Math.floor((Math.random() * 5) );
-	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  autoplay = "autoplay" preload="auto" id="'+gamesList[gameNumber][selectedSongNumber].song+'" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
+	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  autoplay = "autoplay" preload="auto" id="'+gamesList[gameNumber][selectedSongNumber].song+'" controls src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
 	console.log("correct song will be ="+ selectedSongNumber);
 	for(var i = 0; i < gamesList[gameNumber].length; i++)
 	{
