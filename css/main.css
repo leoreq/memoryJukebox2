@@ -48,9 +48,19 @@ margin-top:13em;
 /*Mode selection section*/
 .styleSelectSection {
   display:none;
-  background-image: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
-
 }
+/*This will contain the stryles for the Choices Section*/
+
+.choicesSection {
+  display:none;
+}
+.subTitle{
+  margin: 1em;
+  color: #A60015;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 /*Things used to format response, currently just for testign purposes*/
 
 .tst {
