@@ -17,7 +17,7 @@ h1 {
 }
 #principal {
   background-color: #fff;
-  padding-bottom:5em;
+  padding-bottom:10em;
 }
 
 /*Start adding the game instruction styles*/
@@ -37,7 +37,7 @@ h1 {
 }
 
 #instructionsList {
-margin-top:18em;
+margin-top:7.5em;
 }
 
 /*Need to make sure this elements stand out when instructions are displayed*/
