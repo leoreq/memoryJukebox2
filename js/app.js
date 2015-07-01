@@ -1,37 +1,4 @@
-$(document).ready( function() {
-	console.log("ready to go");
-	//Instructions Listener
-	$('#instructionsbutton')
-		.click(function(){
-	    	$("#MJinstructions").toggle();})
-	// MODE Listener
-	$('#modeButton')
-		.click(function(){
-    		$(".styleSelectSection").toggle();})
-	//Play button Listener	
-	$('#playButton')
-		.click( function(event){
-			event.preventDefault();
-			//set default settings
-			$(".choicesSection").css("display", "none");
-			// zero out results if previous search has run
-			//$('.respArtist').html('check');
-			//$('.respSong').html('????');
-			
-			// get the value of the tags the user submitted
-			var tags = "genre:"+$(".musicStyleForm").find("input[id='styleEnter']").val();
-			console.log(tags);
-			getSongListObject(tags);
-			
-			//songPlayer("#audioTest");
-	
-	});
-});
 
-//listing Global Variables
-var songList=[];
-var gameList=[];
-var gamesList=[];
 
 // This will process the AJAX request and connect to spotify open API (this is without access to personal info hence no need to do login)
 var getSongListObject = function(tags) {
@@ -83,6 +50,7 @@ var artistObj = function(question) {
 	var mySongHits=new Object();
 	mySongHits.song=question.name;
 	mySongHits.artist=question.artists[0].name;
+	mySongHits.albumImgBig=question.album.images[0].url;
 	mySongHits.albumImg=question.album.images[1].url;
 	mySongHits.preview=question.preview_url;
 	mySongHits.popularity=question.popularity;
@@ -115,9 +83,11 @@ var createAllGames = function() {
 			console.log("List of the games that will be played");
 			console.log(gamesList);
 
+
 		} else {
 			 alert("Not enough results to continue playing");
 		}
+
 }
 
 var createGame=function() {
@@ -128,8 +98,9 @@ var createGame=function() {
 
 var displayGame=function(gameNumber) {
 	$("#optionsSection").find('.row').remove();
+	$(".displaySection").find('audio').remove();
 	selectedSongNumber=Math.floor((Math.random() * 5) );
-	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  autoplay = "autoplay" preload="auto" id="'+gamesList[gameNumber][selectedSongNumber].song+'" controls src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
+	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  autoplay = "autoplay" id="'+gamesList[gameNumber][selectedSongNumber].song+'" controls="" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
 	console.log("correct song will be ="+ selectedSongNumber);
 	for(var i = 0; i < gamesList[gameNumber].length; i++)
 	{
@@ -146,7 +117,22 @@ var displayGame=function(gameNumber) {
         $('#optionsSection')
         .prepend('<div class="row"><div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" id=""><a href="#" class="btn btn-lg btn-danger '+bstatus+'" role="button">' + gamesList[gameNumber][i].song +" / "+gamesList[gameNumber][i].artist + '</a></div></div>');		
     };
-    $(".choicesSection").toggle();
+    //set the rewards in place
+    console.log("DEBUG the image link assigned is: "+gamesList[gameNumber][selectedSongNumber].albumImg)
+	$('#bandPic').attr('src',''+gamesList[gameNumber][selectedSongNumber].albumImgBig+'');
+	$('#albumPic').attr('src',''+gamesList[gameNumber][selectedSongNumber].albumImg+'');
+	//display the choices
+	$(".choicesSection").toggle();
+
+
+}
+
+var displayReward=function() {
+	$(".resultSection").toggle();
+}
+
+var displayMistake=function(){
+	$(".resultSection").toggle();
 }
 
 function songPlayer (tag) {
@@ -204,7 +190,56 @@ var showError = function(error){
 	errorElem.append(errorText);
 };
 
+$(document).ready( function() {
+	console.log("ready to go");
+	//Instructions Listener
+	$('#instructionsbutton')
+		.click(function(){
+	    	$("#MJinstructions").toggle();})
+	// MODE Listener
+	$('#modeButton')
+		.click(function(){
+    		$(".styleSelectSection").toggle();})
+	//Play button Listener	
+	$('#playButton')
+		.click( function(event){
+			event.preventDefault();
+			//set default settings
+			$(".choicesSection").css("display", "none");
+			// zero out results if previous search has run
+			//$('.respArtist').html('check');
+			//$('.respSong').html('????');
+			
+			// get the value of the tags the user submitted
+			var tags = "genre:"+$(".musicStyleForm").find("input[id='styleEnter']").val();
+			console.log(tags);
+			getSongListObject(tags);
+			
+			//songPlayer("#audioTest");
+	
+	});
 
+	//WrongAnswer Listener
+	$(".choicesSection").on("click", ".INCORRECT", function () {
+	    console.log("the answer is incorrect.  ");
+	    //run noReward Program
+	    event.preventDefault();
+    	displayMistake();
+	    });
+	//CorrectAnswer Listener
+	$(".choicesSection").on("click", ".CORRECT", function () {
+	    console.log("the answer is correct.  ");
+	    //run noReward Program
+	    event.preventDefault();
+    	displayReward();
+	    });
+
+});
+
+//listing Global Variables
+var songList=[];
+var gameList=[];
+var gamesList=[];
 
 
 

@@ -25,22 +25,22 @@
 		<!--has the black screen with information on how to play-->
 		<section class="instructionSection ">
 			<div class="blackOut col-xs-12 img-rounded" id="MJinstructions">
-	  		<div class="row">
-	  			<ul class="col-xs-offset-1 col-xs-10" id="instructionsList">
-	  			<li><p><strong>[1]</strong> SELECT MUSIC TYPE DIFICULTY (DIFF):</p>
-		  			<ul id="difficulties">
-		  				<li><p> ROCK is selected by Default</p></li>
-		  				<li><p> Submit a different style if you want.</p></li>
+		  		<div class="row">
+		  			<ul class="col-xs-offset-1 col-xs-10" id="instructionsList">
+		  			<li><p><strong>[1]</strong> SELECT MUSIC TYPE DIFICULTY (DIFF):</p>
+			  			<ul id="difficulties">
+			  				<li><p> ROCK is selected by Default</p></li>
+			  				<li><p> Submit a different style if you want.</p></li>
+			  			</ul>
+		  				
+		  			</li>
+		  			<li><p><strong>[2]</strong> PLAY: Press PLAY to start the game</p></li>
+		  			<li><p><strong>[3]</strong> LISTEN: A record will play for 15 seconds</p></li>
+		  			<li><p><strong>[4]</strong> GUESS: Select the ARTIST/SONG combination you think is playing.</p></li>
+		  			<!--li><h1 class="explanation"> If correct you will be rewarded a disc for your collection !!! </h1></li-->
 		  			</ul>
-	  				
-	  			</li>
-	  			<li><p><strong>[2]</strong> PLAY: Press PLAY to start the game</p></li>
-	  			<li><p><strong>[3]</strong> LISTEN: A record will play for 15 seconds</p></li>
-	  			<li><p><strong>[4]</strong> GUESS: Select the ARTIST/SONG combination you think is playing.</p></li>
-	  			<!--li><h1 class="explanation"> If correct you will be rewarded a disc for your collection !!! </h1></li-->
-	  		</ul>
-	  		</div>
-		</div>
+		  		</div>
+			</div>
 		</section>
 		<!--This contains a responsive image that holds the app name-->
 		<section class="titleSection">
@@ -50,7 +50,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!--This will hold the main buttons for the app-->
 		<section class="buttonSection">
 			<div class="container col-xs-12">
@@ -63,7 +62,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!--Will let user change the default music style-->
 		<section class="styleSelectSection">
 			<form class="musicStyleForm col-xs-offset-8 col-xs-4 bg-danger img-rounded" role="form">
@@ -86,25 +84,57 @@
 					<img src="./images/player.JPG" alt="..." class="img-responsive">	
 				</div>
 			</div>
-		
-	</section>
-
-	<!--has to hold alternatives for selection-->
-	<section class="choicesSection">
-		<div class="row">
-			<div class="column-xs-12">
-				<h1 class="subTitle"><strong>Choose</strong> the song you think is playing</h1>
-			</div>
-		</div>
-		<div class="container col-xs-offset-2 col-xs-8" id="optionsSection">
+		</section>
+		<!--has to hold alternatives for selection-->
+		<section class="choicesSection">
 			<div class="row">
-				<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" id="">
-			    	<a href="#" class="btn btn-lg btn-danger" role="button">Option</a>
+				<div class="column-xs-12">
+					<h1 class="subTitle"><strong>Choose</strong> the song you think is playing</h1>
 				</div>
 			</div>
-			
-		</div>
-	</section>
+			<div class="container col-xs-offset-2 col-xs-8" id="optionsSection">
+				<div class="row">
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" id="">
+				    	<a href="#" class="btn btn-lg btn-danger" role="button">Option</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--displays the result-->
+		<section class="resultSection" >
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 id="messageBox2" class="text-center">CORRECTOUU</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<img src="./images/record.JPG" alt="..." class="img-rounded center-block" id="bandPic">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="subTitle" id="prizeMessage"><strong>You have won a new record!!</strong></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6" id="prizeHolder">
+					<img src="./images/record.JPG" alt="..." class="img-circle" id="albumPic">
+				</div>
+				<div class="col-xs-6" id="prizeDetails">
+					<h2 class="detailPrize"><strong>SONG:</strong>Track</h2>
+					<h2 class="detailPrize"><strong>ARTIST:</strong>
+					ArtistName</h2>
+				</div>
+			</div>
+			<div class="container col-xs-offset-2 col-xs-8" >
+				<div class="row">
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" id="nxtBtn">
+				    	<a href="#" class="btn btn-lg btn-danger" role="button">Next</a>
+					</div>
+				</div>	
+			</div>
+		</section>
 		<!--has to hold all the templates that will be used in the code-->
 		<section class="templatesSection">
 			<div class="templates hidden">	
@@ -125,13 +155,9 @@
 				</div>
 			</div>
 		</section>
-		
 		<section class="results">
-			
 		</section>
-
 		<section class="search-results">
-			
 		</section>
 		<!--has to hold alternatives for selection-->
 		<!--section class="choicesSection">
