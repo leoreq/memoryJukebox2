@@ -149,9 +149,11 @@ var displayMistake=function(){
 }
 
 var displayNext=function(){
+	$(".displaySection").find('audio').remove();
 	$(".resultSection").toggle();
 	$(".displaySection").toggle();
 	$(".buttonSection").toggle();
+
 }
 function songPlayer (tag) {
 	console.log(tag+" was played");
