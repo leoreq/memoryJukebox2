@@ -5,14 +5,15 @@ html {
   height: 100%;
   background-color: #66000D;
   font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
+  font-size: 2.5em;
 }
 
 body{
-  line-height: 3em;
+  line-height: 2em;
 }
 
 h1 {
-  font-size: x-large;
+  font-size: 1em;
 }
 #principal {
   background-color: #fff;

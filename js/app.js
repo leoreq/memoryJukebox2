@@ -121,6 +121,9 @@ var displayGame=function(gameNumber) {
     console.log("DEBUG the image link assigned is: "+gamesList[gameNumber][selectedSongNumber].albumImg)
 	$('#bandPic').attr('src',''+gamesList[gameNumber][selectedSongNumber].albumImgBig+'');
 	$('#albumPic').attr('src',''+gamesList[gameNumber][selectedSongNumber].albumImg+'');
+	$('#correctSongID').text(gamesList[gameNumber][selectedSongNumber].song);
+	$('#correctArtistID').text(gamesList[gameNumber][selectedSongNumber].artist);
+
 	//display the choices
 	$(".choicesSection").toggle();
 
@@ -128,13 +131,28 @@ var displayGame=function(gameNumber) {
 }
 
 var displayReward=function() {
-	$(".resultSection").toggle();
+	$("#messageBox2").text("CORRECTOUU");
+	$("#prizeMessage").text("You have won a new record for your collection!!");
+	$(".choicesSection").toggle();
+	$(".displaySection").toggle();
+	$(".buttonSection").toggle();
+	$(".resultSection").fadeIn(3000);
 }
 
 var displayMistake=function(){
-	$(".resultSection").toggle();
+	$("#messageBox2").text("NOPE!! : Here is a tip for next time");
+	$("#prizeMessage").text("Missed the record ");
+	$(".choicesSection").toggle();
+	$(".displaySection").toggle();
+	$(".buttonSection").toggle();
+	$(".resultSection").fadeIn(3000);
 }
 
+var displayNext=function(){
+	$(".resultSection").toggle();
+	$(".displaySection").toggle();
+	$(".buttonSection").toggle();
+}
 function songPlayer (tag) {
 	console.log(tag+" was played");
 	$(tag).volume = 0.5;
@@ -232,6 +250,14 @@ $(document).ready( function() {
 	    //run noReward Program
 	    event.preventDefault();
     	displayReward();
+	    });
+
+	//Next Listener
+	$(".resultSection").on("click", "#nxtBtn", function () {
+	    console.log("Continue to next question.  ");
+	    //run noReward Program
+	    event.preventDefault();
+    	displayNext();
 	    });
 
 });
