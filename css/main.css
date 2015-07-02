@@ -5,19 +5,18 @@ html {
   height: 100%;
   background-color: #66000D;
   font-family: 'Shadows Into Light','Open Sans Condensed', sans-serif;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 body{
-  line-height: 2em;
+  line-height: 1.5em;
 }
-
-h1 {
-  font-size: 1em;
+h1 , h2 {
+  font-size: 1.5em;
 }
 #principal {
   background-color: #fff;
-  padding-bottom:10em;
+  padding-bottom:4em;
 }
 
 /*Start adding the game instruction styles*/
@@ -54,9 +53,17 @@ margin-top:7.5em;
   display:none;
 }
 /*This will contain the stryles for the Choices Section*/
-
+.mainPlayer {
+  margin:2em;
+}
+.btn-danger {
+   font-size:1.5em;
+}
+.messagebox{
+  margin:1em;
+}
 .subTitle{
-  margin: 1em;
+  margin: 2em;
   color: #A60015;
   font-weight: 900;
   text-transform: uppercase;
