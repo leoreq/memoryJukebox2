@@ -11,7 +11,7 @@ var getSongListObject = function(tags) {
 								market:'BO'};
 	
 	var result = $.ajax({
-		url: "http://api.spotify.com/v1/search",
+		url: "http://crossorigin.me/http://api.spotify.com/v1/search",
 		data: request,
 		dataType: "JSON",
 		type: "GET",
