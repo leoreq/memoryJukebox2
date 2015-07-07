@@ -59,6 +59,10 @@ margin-top:12.5em;
 .btn-danger {
    font-size:1.5em;
 }
+
+.btn-group {
+  margin-bottom:1em;
+}
 .messagebox{
   margin:1em;
 }
@@ -67,6 +71,11 @@ margin-top:12.5em;
   color: #A60015;
   font-weight: 900;
   text-transform: uppercase;
+}
+.prize {
+  font-size: 125%;
+  color: #A60015;
+  line-height: 190%;
 }
 
 /*Things used to format response, currently just for testign purposes*/

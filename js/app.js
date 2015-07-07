@@ -124,6 +124,10 @@ var displayGame=function(gameNumber) {
 	$('#correctSongID').text(gamesList[gameNumber][selectedSongNumber].song);
 	$('#correctArtistID').text(gamesList[gameNumber][selectedSongNumber].artist);
 
+	$('.templates .albumPic').attr('src',''+gamesList[gameNumber][selectedSongNumber].albumImg+'');
+	$('.templates .correctSongID').text(gamesList[gameNumber][selectedSongNumber].song);
+	$('.templates .correctArtistID').text(gamesList[gameNumber][selectedSongNumber].artist);
+
 	//display the choices
 	$(".choicesSection").toggle();
 
@@ -133,6 +137,8 @@ var displayGame=function(gameNumber) {
 var displayReward=function() {
 	$("#messageBox2").text("CORRECTOUU");
 	$("#prizeMessage").text("You have won a new record for your collection!!");
+	var prize = $('.templates .prizeTemplate').clone();
+	$('.recordHolder').append(prize);
 	$(".choicesSection").toggle();
 	$(".displaySection").toggle();
 	$(".buttonSection").toggle();
@@ -162,6 +168,18 @@ function songPlayer (tag) {
 	$(tag).play();
 }
 
+var appendPrize = function(question) {
+	
+	// clone our result template code
+	var result = $('.templates .prizeTemplate').clone();
+	
+	// Set the Song Data
+	var songElem = result.find('.respSong');
+	console.log(question.name);
+	songElem.text(question.name);
+    
+	return result;
+};
 // this function takes the question object returned by StackOverflow 
 // and creates new result to be appended to DOM
 var showQuestion = function(question) {

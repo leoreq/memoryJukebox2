@@ -102,6 +102,13 @@
 		</section>
 		<!--displays the result-->
 		<section class="resultSection" >
+			<div class="container col-xs-offset-1 col-xs-10" >
+				<div class="row">
+					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" >
+				    	<a href="#" class="btn btn-lg btn-danger" role="button" id="nxtBtn">Next</a>
+					</div>
+				</div>	
+			</div>
 			<div class="row">
 				<div class="col-xs-12">
 					<h1 id="messageBox2" class="text-center">CORRECTOUU</h1>
@@ -109,7 +116,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<img src="./images/record.JPG" alt="..." class="img-rounded center-block" id="bandPic">
+					<img src="./images/record.JPG" alt="..." class="img-rounded center-block img-responsive" id="bandPic">
 				</div>
 			</div>
 			<div class="row">
@@ -118,22 +125,37 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-6" id="prizeHolder">
-					<img src="./images/record.JPG" alt="..." class="img-circle" id="albumPic">
+				<div class="col-xs-offset-1 col-xs-4" id="prizeHolder">
+					<img src="./images/record.JPG" alt="..." class="img-circle img-responsive" id="albumPic">
 				</div>
-				<div class="col-xs-6" id="prizeDetails">
+				<div class="col-xs-6 prize" id="prizeDetails">
 					<h2 class="detailPrize"><strong >SONG:</strong> <em id="correctSongID">Track</em></h2>
 					<h2 class="detailPrize"><strong>ARTIST:</strong>
 					<em id="correctArtistID">ArtistName</em></h2>
 				</div>
+			</div>	
+		</section>
+		<section class="collectionSection">
+			<div class="row">
+				<div class="column-xs-12">
+					<h1 class="subTitle"><strong>Collection</strong></h1>
+				</div>
 			</div>
-			<div class="container col-xs-offset-2 col-xs-8" >
-				<div class="row">
-					<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" >
-				    	<a href="#" class="btn btn-lg btn-danger" role="button" id="nxtBtn">Next</a>
+			<ul class="list-group recordHolder">
+				<!--li class="list-group-item prizeTemplate">
+					<div class="row">
+						<div class="col-xs-offset-1 col-xs-5">
+							<img src="./images/record.JPG" alt="..." class="img-circle albumPic" >
+						</div>
+						<div class="col-xs-5 prize">
+							<h2 class="detailPrize"><strong >SONG:</strong> <em class="correctSongID">Track</em></h2>
+							<h2 class="detailPrize"><strong>ARTIST:</strong>
+							<em class="correctArtistID" >ArtistName</em></h2>
+						</div>
 					</div>
-				</div>	
-			</div>
+				</li-->								
+			</ul>
+		
 		</section>
 		<!--has to hold all the templates that will be used in the code-->
 		<section class="templatesSection">
@@ -153,32 +175,26 @@
 						</div>
 					</div>
 				</div>
+				<li class="list-group-item prizeTemplate">
+					<div class="row">
+						<div class="col-xs-offset-1 col-xs-5">
+							<img src="./images/record.JPG" alt="..." class="img-circle albumPic" >
+						</div>
+						<div class="col-xs-5 prize">
+							<h2 class="detailPrize"><strong >SONG:</strong> <em class="correctSongID">Track</em></h2>
+							<h2 class="detailPrize"><strong>ARTIST:</strong>
+							<em class="correctArtistID" >ArtistName</em></h2>
+						</div>
+					</div>
+				</li>
+
 			</div>
 		</section>
 		<section class="results">
 		</section>
 		<section class="search-results">
 		</section>
-		<!--has to hold alternatives for selection-->
-		<!--section class="choicesSection">
-			
-				<div class="row">
-					<div class="col-xs-12">
-						<h1 class="subTitle "><strong>Choose</strong> the song you think is playing</h1>
-					</div>
-				</div>
-
-				<div class="btn-group-vertical col-xs-offset-2 col-xs-8" role="group" aria-label="Justified button group">
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 1</a>
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 2</a>
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 3</a>
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 4</a>
-	      			<a href="#" class="btn btn-lg btn-danger" role="button">Option 5</a>
-	    		</div>
-			
-		</section-->
-
-		<!--displays the prize-->
+		
 
 
 	</div>
