@@ -48,6 +48,9 @@ margin-top:12.5em;
     z-index:1090;
   position: relative;
 }
+ #rePlayButton {
+  display:none;
+}
 /*Mode selection section*/
 .styleSelectSection, .resultSection,.choicesSection {
   display:none;
@@ -58,6 +61,7 @@ margin-top:12.5em;
 }
 .btn-danger {
    font-size:1.5em;
+white-space: normal;
 }
 
 .btn-group {

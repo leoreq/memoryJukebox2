@@ -35,7 +35,7 @@ var getSongListObject = function(tags) {
 		console.log(songList);
 		//putting game creation within Ajax object so that this is triggered only after objects are loaded
 		createAllGames();
-		displayGame(0);
+		displayGame(games);
 
 	})
 	.fail(function(jqXHR, error, errorThrown){
@@ -66,15 +66,17 @@ var createAllGames = function() {
 			gamesList=[];
 			for (gameNum = 1; gameNum < 6; gameNum++) {
 				gameList=[];
-				console.log("Currently Playing game : " + gameNum + " ");
+				console.log("Currently creating game : " + gameNum + " ");
 				//second round of iteration for the total of song alternative in each game
 				for (songNum=1;songNum<6;songNum++) {
 					createGame();
 				}
+				//This will convert arrays into objects
 				for (songNum=0;songNum<5;songNum++) {
 					obj=gameList[songNum][0];
 					gameList[songNum]=obj;
 				}
+				//this will greate a game object, each game has 5 song objects
 				gamesList.push(gameList);
 				
 			}
@@ -96,7 +98,9 @@ var createGame=function() {
 	gameList.push(selectedSongObject);
 }
 
+
 var displayGame=function(gameNumber) {
+	$("#messageBox").text("Now Playing "+(games+1)+" of "+gamesList.length);
 	$("#optionsSection").find('.row').remove();
 	$(".displaySection").find('audio').remove();
 	selectedSongNumber=Math.floor((Math.random() * 5) );
@@ -135,6 +139,7 @@ var displayGame=function(gameNumber) {
 }
 
 var displayReward=function() {
+	correctAnswerCount++;
 	$("#messageBox2").text("CORRECTOUU");
 	$("#prizeMessage").text("You have won a new record for your collection!!");
 	var prize = $('.templates .prizeTemplate').clone();
@@ -159,7 +164,29 @@ var displayNext=function(){
 	$(".resultSection").toggle();
 	$(".displaySection").toggle();
 	$(".buttonSection").toggle();
+	games++;
+	if (games>=5 ) {
+		endGame();		
+	}
+	else {
+		displayGame(games);
+	}
+}
 
+var endGame=function() {
+	$("#instructionsbutton").toggle();
+	$("#rePlayButton").toggle();
+	$("#optionsSection").find('.row').remove();
+	$(".displaySection").find('audio').remove();
+	$(".displaySection").find('.mainPlayer').toggle();
+	if (correctAnswerCount==gamesList.length) {
+		$("#messageBox").text("YOU ARE A MUSIC GENIOUS!!! : You guessed all " + gamesList.length+ " songs perfectly");
+	}
+	else
+	{
+		$("#messageBox").text("Your Final Score is "+correctAnswerCount+" out of " + gamesList.length+ " ");
+	}
+	
 }
 function songPlayer (tag) {
 	console.log(tag+" was played");
@@ -230,6 +257,7 @@ var showError = function(error){
 
 $(document).ready( function() {
 	console.log("ready to go");
+
 	//Instructions Listener
 	$('#instructionsbutton')
 		.click(function(){
@@ -242,6 +270,8 @@ $(document).ready( function() {
 	$('#playButton')
 		.click( function(event){
 			event.preventDefault();
+			$("#playButton").fadeOut(1500);
+			$("#modeButton").fadeOut(1500);
 			//set default settings
 			$(".choicesSection").css("display", "none");
 			// zero out results if previous search has run
@@ -256,6 +286,10 @@ $(document).ready( function() {
 			//songPlayer("#audioTest");
 	
 	});
+	// Re-Play Listener
+	$('#rePlayButton')
+		.click(function(){
+    		location.reload();})
 
 	//WrongAnswer Listener
 	$(".choicesSection").on("click", ".INCORRECT", function () {
@@ -286,6 +320,8 @@ $(document).ready( function() {
 var songList=[];
 var gameList=[];
 var gamesList=[];
+var games=0;
+var correctAnswerCount=0;
 
 
 
