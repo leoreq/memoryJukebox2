@@ -104,7 +104,10 @@ var displayGame=function(gameNumber) {
 	$("#optionsSection").find('.row').remove();
 	$(".displaySection").find('audio').remove();
 	selectedSongNumber=Math.floor((Math.random() * 5) );
-	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  autoplay = "autoplay" id="'+gamesList[gameNumber][selectedSongNumber].song+'" controls="" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
+	songIDtag="#"+gamesList[gameNumber][selectedSongNumber].song;
+	//$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  id="'+gamesList[gameNumber][selectedSongNumber].song+'" controls="" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
+	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  id="AudioTagTest" controls="" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
+
 	console.log("correct song will be ="+ selectedSongNumber);
 	for(var i = 0; i < gamesList[gameNumber].length; i++)
 	{
@@ -135,6 +138,8 @@ var displayGame=function(gameNumber) {
 	//display the choices
 	$(".choicesSection").toggle();
 
+	songPlayer();
+	//$('audio').play;
 
 }
 
@@ -188,11 +193,13 @@ var endGame=function() {
 	}
 	
 }
-function songPlayer (tag) {
-	console.log(tag+" was played");
-	$(tag).volume = 0.5;
-	$(tag).triggger('play');
-	$(tag).play();
+function songPlayer () {
+	var aud = document.getElementById("AudioTagTest"); 
+
+	console.log("song was played");
+	aud.volume = 0.5;
+	//$(tag).triggger('play');
+	aud.play();
 }
 
 var appendPrize = function(question) {
