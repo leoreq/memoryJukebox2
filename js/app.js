@@ -5,16 +5,51 @@ var getSongListObject = function(tags) {
 	
 	// the parameters we need to pass in our request to StackOverflow's API
 	var request = {q: tags,
-								type: 'track',
-								year: '1998-2000',
-								limit: '50',
-								market:'BO'};
+				type: 'track',
+				year: '1998-2000',
+				limit: '50',
+				market:'BO',
+				  // The 'contentType' property sets the 'Content-Type' header.
+				  // The JQuery default for this property is
+				  // 'application/x-www-form-urlencoded; charset=UTF-8', which does not trigger
+				  // a preflight. If you set this value to anything other than
+				  // application/x-www-form-urlencoded, multipart/form-data, or text/plain,
+				  // you will trigger a preflight request.
+				  contentType: 'text/plain',
+
+				  xhrFields: {
+				    // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
+				    // This can be used to set the 'withCredentials' property.
+				    // Set the value to 'true' if you'd like to pass cookies to the server.
+				    // If this is enabled, your server must respond with the header
+				    // 'Access-Control-Allow-Credentials: true'.
+				    withCredentials: false
+				  },
+
+				  headers: {
+				    // Set any custom headers here.
+				    // If you set any non-simple headers, your server must include these
+				    // headers in the 'Access-Control-Allow-Headers' response header.
+				  },
+
+				  success: function() {
+				    // Here's where you handle a successful response.
+				  },
+
+				  error: function() {
+				    // Here's where you handle an error response.
+				    // Note that if the error was due to a CORS issue,
+				    // this function will still fire, but there won't be any additional
+				    // information about the error.
+				  }
+	};
 	
 	var result = $.ajax({
-		url: "http://crossorigin.me/http://api.spotify.com/v1/search",
+		//url: "http://crossorigin.me/http://api.spotify.com/v1/search",
+		url: "http://api.spotify.com/v1/search",
 		data: request,
 		dataType: "JSON",
-		type: "GET",
+		type: "GET"
 		})
 	.done(function(result){
 		/*
@@ -104,7 +139,6 @@ var displayGame=function(gameNumber) {
 	$("#optionsSection").find('.row').remove();
 	$(".displaySection").find('audio').remove();
 	selectedSongNumber=Math.floor((Math.random() * 5) );
-	songIDtag="#"+gamesList[gameNumber][selectedSongNumber].song;
 	//$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  id="'+gamesList[gameNumber][selectedSongNumber].song+'" controls="" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
 	$('.displaySection').append('<div class="row"><div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 text-center"><audio  id="AudioTagTest" controls="" src="' + gamesList[gameNumber][selectedSongNumber].preview + '"></audio></div></div>');		
 
@@ -195,7 +229,7 @@ var endGame=function() {
 }
 function songPlayer () {
 	var aud = document.getElementById("AudioTagTest"); 
-
+	aud.load();
 	console.log("song was played");
 	aud.volume = 0.5;
 	//$(tag).triggger('play');
